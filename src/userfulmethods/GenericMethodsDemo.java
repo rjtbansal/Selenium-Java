@@ -1,4 +1,4 @@
-package basicExamples;
+package userfulmethods;
 
 import java.util.concurrent.TimeUnit;
 
