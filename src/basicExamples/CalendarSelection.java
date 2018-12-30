@@ -1,5 +1,6 @@
 package basicExamples;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -27,7 +28,7 @@ public class CalendarSelection {
 	
 	@Test
 	public void test1() throws Exception {
-		
+	//this test selects a date which is hardcoded	
 		driver.get(base_url);
 		
 		//click flights tab
@@ -38,7 +39,29 @@ public class CalendarSelection {
 		departing_field.click();
 		WebElement select_date_from_dropdown = driver.findElement(By.xpath("//div[contains(@class,\"datepicker-cal-month\")][position()=2]//button[@data-day=9]"));
 		select_date_from_dropdown.click();
-		Thread.sleep(3000);
+		Thread.sleep(3000);	
+	}
+	
+	@Test
+	public void test2() throws Exception {
+		//test for valid dates and click on 31st
+		
+		driver.get(base_url);
+		//click flights tab
+		WebElement flights_tab = driver.findElement(By.id("tab-flight-tab-hp"));
+		flights_tab.click();
+		//find departing field
+		WebElement departing_field = driver.findElement(By.id("flight-departing-hp-flight"));
+		departing_field.click();
+		List<WebElement> days_of_a_month = driver.findElements(By.xpath("//div[contains(@class,'datepicker-cal-month')][position()=2]//button[@data-day]"));
+		
+		for(WebElement day: days_of_a_month) {
+			if (day.getText().equals("27")) {
+				day.click();
+				break;
+			}
+		}
+		
 		
 	}
 
