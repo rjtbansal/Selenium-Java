@@ -23,13 +23,14 @@ public class KeyPressDemo {
 		driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
+		driver.get(base_url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
 	
 	@Test
 	public void testKeyPress() throws Exception {
-		driver.get(base_url);
+		
 		driver.findElement(By.xpath("//a[contains(@href,'sign_in')]")).click();
 		
 		WebElement user_email_field = driver.findElement(By.id("user_email"));
@@ -45,6 +46,23 @@ public class KeyPressDemo {
 		//press enter key
 		driver.findElement(By.name("commit")).sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
+	}
+	
+	@Test
+	public void testKeyPressCombo() throws Exception {
+		//finding a random id
+		WebElement open_window_button = driver.findElement(By.id("openwindow"));
+		//send cmd/ctrl + a combination
+		
+		//1st way to send key combination
+		//open_window_button.sendKeys(Keys.CONTROL + "a");
+		
+		//2nd way to send key combo
+		//open_window_button.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		
+		String selectAll = Keys.chord(Keys.CONTROL, "a");
+		open_window_button.sendKeys(selectAll);
+		Thread.sleep(3000);
 	}
 	
 	@After
