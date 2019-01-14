@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class KeyPressDemo {
 
@@ -63,6 +64,18 @@ public class KeyPressDemo {
 		String selectAll = Keys.chord(Keys.CONTROL, "a");
 		open_window_button.sendKeys(selectAll);
 		Thread.sleep(3000);
+	}
+	
+	@Test
+	public void testKeyPressUsingActions() throws Exception {
+		//performing keyboard combo using Actions class
+		WebElement open_window_button = driver.findElement(By.id("openwindow"));
+		
+		Actions action = new Actions(driver);
+		//sequence -> keyDown (pressing control/command) -> send character (a) -> keyUp (release control/cmd key)
+		action.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+		Thread.sleep(3000);
+		
 	}
 	
 	@After
