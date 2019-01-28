@@ -6,15 +6,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjectModel.pageclasses.FlightsTab;
+import pageclasses.HotelsTabFactory;
+import pageclasses.FlightsTab;
 
 //expedia website main tests go here
 public class ExpediaMainTests {
 
 	private WebDriver driver;
 	private String base_url;
+	HotelsTabFactory hotelsTab;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -49,6 +50,16 @@ public class ExpediaMainTests {
 		FlightsTab.returningDateField(driver).sendKeys("31/01/2019");
 		FlightsTab.clickSearchButton(driver);
 		Thread.sleep(2000);
+	}
+	
+	@Test
+	public void testHotelSearch() throws Exception {
+		hotelsTab = new HotelsTabFactory(driver);
+		hotelsTab.clickHotelsTab();
+		hotelsTab.enterDestination("Toronto");
+		hotelsTab.enterCheckInDate("02/12/2019");
+		hotelsTab.enterCheckoutDate("02/15/2019");
+		hotelsTab.clickSearchButton();
 	}
 	
 	@After
