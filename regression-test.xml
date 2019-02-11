@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Testsuite End To End">
+<test name="App Test 1">
+	<classes>
+		<class name="testNgClasses.TestNg_TestClass1"></class>
+	</classes>
+</test>
+<test name="App Test 2">
+	<classes>
+		<class name="testNgClasses.TestNg_TestClass2"></class>
+	</classes>
+</test>
+</suite>
