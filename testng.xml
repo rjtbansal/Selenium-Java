@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Testsuite">
+<test name="Application Test">
+<!-- all classes that need to be run can be queued as shown below -->
+	<classes>
+		<class name="testNgClasses.TestNg_TestClass1"></class>  <!--  class name should match the actual defined class name within package -->
+		<class name="testNgClasses.TestNg_TestClass2"></class>
+	</classes>
+</test>
+</suite>
