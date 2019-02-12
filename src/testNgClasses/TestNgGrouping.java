@@ -6,7 +6,8 @@ import org.testng.annotations.AfterClass;
 
 public class TestNgGrouping {
  
-  @BeforeClass
+	//alwaysRun ensures the method always runs irrespective of grouping rules
+  @BeforeClass(alwaysRun=true)
   public void beforeClass() {
 	  System.out.println("Before class method");
   }
@@ -33,7 +34,7 @@ public class TestNgGrouping {
 		System.out.println("Running Test - Honda CBR");
 	}
 
-  @AfterClass
+  @AfterClass(alwaysRun=true)
   public void afterClass() {
 	  System.out.println("After class method");
   }
