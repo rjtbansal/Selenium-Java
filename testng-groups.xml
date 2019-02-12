@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression TestSuite">
+<test name="Groups Demo">
+<!-- groups tag followed by run tag specifies the groups defined in the class file which need to be executed as part of the testsuite -->
+	<groups>
+		<run>
+			<include name="bikes"></include>  <!-- include specifies name of the group to be executed -->
+		</run>
+	</groups>
+	<classes>
+		<class name="testNgClasses.TestNgGrouping"></class>  <!-- groups specified will run for this class TestNgGrouping -->
+	</classes>
+</test>
+</suite>
