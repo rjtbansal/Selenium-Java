@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Testsuite">
+<test name="Test Vehicles">
+<groups>
+<!-- we can create custom groups that will contain one or more groups that could be run together.  -->
+<!-- custom group all is running all the groups specified in our class -->
+	<define name="all">
+		<include name="bikes"></include>
+		<include name="suv"></include>
+		<include name="sedan"></include>
+	</define>
+	<!-- nobikes group is running tests containing groups either suv or sedan -->
+	<define name="nobikes">
+		<include name="suv"></include>
+		<include name="sedan"></include>
+	</define>
+	<run>
+		<include name="nobikes"></include>
+	</run>
+</groups>
+<classes>
+		<class name="testNgClasses.TestNgGrouping"></class>
+	</classes>
+</test>
+</suite>
