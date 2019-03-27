@@ -1,5 +1,9 @@
 package testNgClasses;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -11,6 +15,7 @@ public class TestNg_DependentTests {
   
 	MathTestClass math_obj;
 	
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		math_obj = new MathTestClass();
@@ -36,7 +41,7 @@ public class TestNg_DependentTests {
 	public void testMethod2() {
 		System.out.println("testMethod2");
 		int result = math_obj.addNumbers(1, 2);
-		Assert.assertEquals(result, 2);
+		AssertJUnit.assertEquals(result, 2);
 	}
 	
 	//testMethod3 is depending on testMethod1 

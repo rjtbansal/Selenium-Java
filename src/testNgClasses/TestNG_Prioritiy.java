@@ -1,11 +1,15 @@
 package testNgClasses;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
 public class TestNG_Prioritiy {
   
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		System.out.println("TestNG_Prioritiy -> before class");

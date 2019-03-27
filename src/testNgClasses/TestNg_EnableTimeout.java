@@ -1,10 +1,14 @@
 package testNgClasses;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class TestNg_EnableTimeout {
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		System.out.println("before class");

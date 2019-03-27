@@ -1,5 +1,7 @@
 package testNgClasses;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -42,7 +44,7 @@ public class TestNg_Asserts {
 	  int sum = mathObj.addNumbers(12, 1);
 	  
 	  SoftAssert sa = new SoftAssert(); //to use soft assert explicitly instantiate its object
-	  sa.assertEquals(sum, 10); //use soft assert object to access its methods
+	  AssertJUnit.assertEquals(sum, 10); //use soft assert object to access its methods
 	  System.out.println("----After first assertEqual----");
 	  sa.assertNotEquals(sum, 13);
 	  System.out.println("----After second assertEqual----");
@@ -54,7 +56,7 @@ public class TestNg_Asserts {
 	  System.out.println("\n Running testStrings test case");
 	  MathTestClass mathObj = new MathTestClass();
 	  String added_strings = mathObj.addStrings("hello", "world");
-	  Assert.assertEquals(added_strings, "hello world");
+	  AssertJUnit.assertEquals(added_strings, "hello world");
   }
   
   @Test

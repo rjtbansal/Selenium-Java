@@ -1,0 +1,12 @@
+/BaseTestSuite.class
+/TestNG_Prioritiy.class
+/TestNgGrouping.class
+/TestNg_Asserts.class
+/TestNg_DependentTests.class
+/TestNg_EnableTimeout.class
+/TestNg_MethodAnnotations.class
+/TestNg_TestClass1.class
+/TestNg_TestClass2.class
+/TestNg_Preserve1.class
+/TestNg_Preserve2.class
+/TestNg_Parameters.class

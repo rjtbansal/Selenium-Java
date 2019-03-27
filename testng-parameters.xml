@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Params Testsuite">
+<test name="Test 1">
+<!-- specifying parameters by their name and value -->
+	<parameter name="browser" value="Chrome"></parameter>
+	<parameter name="platform" value="windows"></parameter>
+	<parameter name="response" value="201,200"></parameter>	
+	<classes>
+		<class name="testNgClasses.TestNg_Parameters"></class>
+	</classes>
+</test>
+</suite>

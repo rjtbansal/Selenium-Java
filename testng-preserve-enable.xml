@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Preserve Enable Testsuite">
+<!-- preserve-order set to true ensures order in which classes are specified their respective methods are run in that order -->
+<test name="Test 1" preserve-order="true">
+	<classes>
+		<class name="testNgClasses.TestNg_Preserve2"></class>
+		<class name="testNgClasses.TestNg_Preserve1"></class>
+	</classes>
+</test>
+
+<!-- test2 wont run because enabled will false -->
+<test name="Test2" enabled="false">
+	<classes>
+		<class name="testNgClasses.TestNg_Preserve2"></class>
+		<class name="testNgClasses.TestNg_Preserve1"></class>
+	</classes>
+</test>
+
+</suite>

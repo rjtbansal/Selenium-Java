@@ -1,6 +1,9 @@
 package testNgClasses;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +14,7 @@ import org.testng.annotations.Test;
  */
 public class TestNg_MethodAnnotations {
 	
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 		System.out.println("\nThis runs once before class");
