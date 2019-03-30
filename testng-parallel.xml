@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<suite  name="Parallel_Testsuite" parallel="methods" thread-count="2">
+<!-- we can specify what we want to run parallel - tests, methods -->
+<!-- thread-count is used by testng to generate threads -->
+<suite  name="Parallel_Testsuite" parallel="tests" thread-count="2">
   <test name="Test 1">
     <classes>
       <class name="testNgClasses.TestNg_Parallel1"/>
