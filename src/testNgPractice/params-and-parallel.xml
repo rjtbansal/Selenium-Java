@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Login" parallel="tests" thread-count="2">
+	<test name="login Chrome">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testNgPractice.ParametersAndParallel"></class>
+		</classes>
+	</test>
+	<test name="login firefox">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="testNgPractice.ParametersAndParallel"></class>
+		</classes>
+	</test>
+</suite>
