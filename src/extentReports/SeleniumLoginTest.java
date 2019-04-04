@@ -27,11 +27,14 @@ public class SeleniumLoginTest {
   public void setUp() {
 	baseUrl = "https://letskodeit.teachable.com/";
 	//folder path where report file will be saved
+	//initializing extent report and providing the path to the file
 	report = new ExtentReports("C:\\Users\\rjtba\\Documents\\extent_reports\\logintest.html");
+	//provides toggle to start the test using which logs are generated. this is a mandatory step
 	test = report.startTest("Verify Welcome Test");
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\rjtba\\Downloads\\chromedriver_win32\\chromedriver.exe");
 	driver = new ChromeDriver();
 	driver.manage().window().maximize();
+	//logging info
 	test.log(LogStatus.INFO, "Browser opened and maximized");
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	driver.get(baseUrl);
@@ -40,6 +43,7 @@ public class SeleniumLoginTest {
 	String page_title = driver.getTitle();
 	test.log(LogStatus.INFO, "Verifying page title after login");
 	Assert.assertTrue(page_title.contains("Let's Kode It"));
+	//logging test as passed
 	test.log(LogStatus.PASS, "Verified page title after login");
   }
   
