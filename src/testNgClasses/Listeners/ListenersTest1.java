@@ -7,7 +7,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 //this class will use Listeners defined in CustomListener class
-@Listeners(CustomListener1.class)
+//@Listeners(CustomListener1.class)
 public class ListenersTest1 {
   
 	@BeforeClass
@@ -29,6 +29,7 @@ public class ListenersTest1 {
 	@Test
 	public void testMethod2() {
 		System.out.println("Code in testMethod2");
+		System.out.println("---------------------");
 		Assert.assertTrue(false);
 	}
 }

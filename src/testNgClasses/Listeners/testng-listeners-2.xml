@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Listeners TestSuite">
+<!--  adding listeners in xml file. No need to use annotations in .java file in that case -->
+<listeners>
+	<listener class-name="testNgClasses.Listeners.CustomListener3"></listener>
+</listeners>
+<test name="Application Test 1">
+	<classes>
+		<class name="testNgClasses.Listeners.ListenersTest1"></class>
+	</classes>
+</test>
+<test name="Application Test 2">
+	<classes>
+		<class name="testNgClasses.Listeners.ListenersTest2"></class>
+	</classes>
+</test>
+</suite>
